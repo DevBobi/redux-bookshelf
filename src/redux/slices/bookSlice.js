@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import books from '../../fakeData/books.json';
 
 // First, create the thunk
 export const fetchBooks = createAsyncThunk(
@@ -25,7 +24,7 @@ const bookSlice = createSlice({
             state.readingList.push(payload)
         },
         removeFromReadingList: (state, { payload }) => {
-            state.readingList = state.readingList.filter(book => book.id != payload.id)
+            state.readingList = state.readingList.filter(book => book.id !== payload.id)
         }
     },
 
